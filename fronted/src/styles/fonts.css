@@ -1,0 +1,113 @@
+/* Aller*/
+@font-face {
+  font-family: 'Aller BD';
+  src: url('../fonts/Aller/Aller_Bd.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aller BDIT';
+  src: url('../fonts/Aller/Aller_BdIt.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aller IT';
+  src: url('../fonts/Aller/Aller_It.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aller LT';
+  src: url('../fonts/Aller/Aller_Lt.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aller LTIT';
+  src: url('../fonts/Aller/Aller_LtIt.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aller RG';
+  src: url('../fonts/Aller/Aller_Rg.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Aller Display';
+  src: url('../fonts/Aller/AllerDisplay.ttf') format('truetype');
+}
+
+/* Blogger Sans*/
+@font-face {
+  font-family: 'Blogger Sans';
+  src: url('../fonts/blogger-sans/Blogger_Sans.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Blogger Sans Bold';
+  src: url('../fonts/blogger-sans/Blogger_Sans-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Blogger Sans Italic';
+  src: url('../fonts/blogger-sans/Blogger_Sans-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Blogger Sans Light';
+  src: url('../fonts/blogger-sans/Blogger_Sans-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Blogger Sans Bold Italic';
+  src: url('../fonts/blogger-sans/Blogger_Sans-Bold_Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Blogger Sans Light Italic';
+  src: url('../fonts/blogger-sans/Blogger_Sans-Light_Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Blogger Sans Medium';
+  src: url('../fonts/blogger-sans/Blogger_Sans-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'BloggerSans Medium Italic';
+  src: url('../fonts/blogger-sans/Blogger_Sans-Medium_Italic.otf') format('opentype');
+}
+
+
+/* Quicksand*/
+@font-face {
+  font-family: 'Quicksand Dash';
+  src: url('../fonts/quicksand/Quicksand_Dash.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quicksand bold';
+  src: url('../fonts/quicksand/Quicksand-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quicksand Bold Italic';
+  src: url('../fonts/quicksand/Quicksand-BoldItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quicksand Italic';
+  src: url('../fonts/quicksand/Quicksand-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quicksand Light';
+  src: url('../fonts/quicksand/Quicksand-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quicksand Light Italic';
+  src: url('../fonts/quicksand/Quicksand-LightItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Quicksand Regular';
+  src: url('../fonts/quicksand/Quicksand-Regular.otf') format('opentype');
+}
