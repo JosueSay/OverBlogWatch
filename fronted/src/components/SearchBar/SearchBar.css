@@ -1,7 +1,7 @@
 @import "../../styles/colors.css";
 @import "../../styles/fonts.css";
 
-.search-bar {
+.input-icon {
   position: relative;
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@
   box-shadow: 0 2px 4px var(--c_orange);
 }
 
-.search-bar input {
+.input-icon input {
   flex: 1;
   border: none;
   border-radius: 5px;
@@ -25,25 +25,25 @@
   text-overflow: ellipsis; /* Añade puntos suspensivos para indicar texto truncado */
 }
 
-.search-bar input:focus {
+.input-icon input:focus {
   outline: none !important;
 }
 
-.search-button {
+.input-icon input::placeholder {
+  color: var(--c_placeholder);
+}
+
+.input-icon:focus-within {
+  box-shadow: 0 0 10px var(--c_orange);
+}
+
+.icon {
   cursor: pointer;
   padding: 5px;
 }
 
-.search-bar input::placeholder {
-  color: var(--c_placeholder);
-}
-
-.search-button:hover {
+.icon:hover {
   color: var(--c_dark_grey);
-}
-
-.search-bar:focus-within {
-  box-shadow: 0 0 10px var(--c_orange);
 }
 
 /* Media query para ajustar el tamaño en pantallas más pequeñas */
