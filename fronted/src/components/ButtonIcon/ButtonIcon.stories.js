@@ -6,7 +6,7 @@ export default {
   component: ButtonIcon
 }
 
-export const Default = {
+export const ButtonIconDefault = {
   args: {
     onClick: fn(),
     icon: faEyeSlash

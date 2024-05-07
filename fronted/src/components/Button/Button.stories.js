@@ -5,7 +5,7 @@ export default {
   component: Button
 }
 
-export const Default = {
+export const ButtonDefault = {
   args: {
     title: 'Click Me!',
     onClick: fn()

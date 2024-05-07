@@ -1,5 +1,3 @@
-// SearchBar.jsx
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './SearchBar.css'; 
@@ -7,13 +5,13 @@ import '../ButtonIcon/ButtonIcon'
 
 const SearchBar = ({ onChange }) => {
   return (
-    <div className="search-bar">
+    <div className="input-icon">
       <input
         type="text"
         placeholder="🔍 Buscar en OverBlogWatch"
         onChange={onChange}
       />
-      <FontAwesomeIcon className='search-button' icon={faSearch} />
+      <FontAwesomeIcon className='icon' icon={faSearch} />
     </div>
   )
 }

@@ -1,7 +1,88 @@
-/* src/Topbar.css */
+@import "../../styles/colors.css";
+@import "../../styles/fonts.css";
+
 .topbar {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--c_topbar);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.topbar .c1,
+.topbar .c2,
+.topbar .c3 {
+    flex: 1;
+}
+
+.topbar .c2 {
+    flex: 2;
     text-align: center;
+    padding: 0px 50px; 
+}
+
+.topbar img {
+    max-width: 50%;
+    cursor: pointer;
+}
+
+.topbar .c3 {
+    display: flex;
+}
+
+.menu-icon {
+    display: none; 
+}
+
+/* Media query para dispositivos con ancho máximo de 768px */
+@media (max-width: 768px) {
+    .topbar .c1,
+    .topbar .c3 {
+        display: none;
+    }
+
+    .topbar .c2 {
+        flex: 1;
+        padding: 10px;
+        
+    }
+
+    .menu-icon {
+        display: block;
+        padding: 0px 10px 0px 0px;
+        cursor: pointer;
+        color: var(--c_white);
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Aparece debajo del Topbar */
+    width: 100%; /* Ocupa el mismo ancho que el Topbar */
+    background-color: var(--c_topbar);
+    color: var(--c_white);
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1;
+    font-family: 'Quicksand Bold', sans-serif;
+}
+
+.dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: var(--c_white); 
+    color: var(--c_topbar);
 }
