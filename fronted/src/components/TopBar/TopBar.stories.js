@@ -1,6 +1,9 @@
-import TopBar from "./TopBar"
+import TopBar from './TopBar'
 
-export default{
-    component: TopBar
+export default {
+  component: TopBar
 }
 
+export const TopBarDefault = {
+    
+}

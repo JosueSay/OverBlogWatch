@@ -1,7 +1,7 @@
 import './App.css'
 import './styles/fonts.css'
 import './styles/colors.css'
-import ViewFonts from './components/view_styles/view_fonts';
+import ViewFonts from './components/view_styles/view_fonts'
 
 function App () {
   return (

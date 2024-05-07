@@ -1,5 +1,5 @@
-import './TextInput.css';
-import PropTypes from 'prop-types';
+import './TextInput.css'
+import PropTypes from 'prop-types'
 
 const TextInput = ({ type, placeholder, value, onChange }) => {
   return (
@@ -12,7 +12,14 @@ const TextInput = ({ type, placeholder, value, onChange }) => {
         className="input"
       />
     </div>
-  );
-};
+  )
+}
 
-export default TextInput;
+TextInput.propTypes = {
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+}
+
+export default TextInput

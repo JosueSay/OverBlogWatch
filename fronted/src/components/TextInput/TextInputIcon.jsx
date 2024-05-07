@@ -1,8 +1,8 @@
-import './TextInput.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
+import './TextInput.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
 
-const TextInputIcon = ({ type, placeholder, value, onChange, icon}) => {
+const TextInputIcon = ({ type, placeholder, value, onChange, icon }) => {
   return (
     <div className='textinput'>
       <input
@@ -14,7 +14,19 @@ const TextInputIcon = ({ type, placeholder, value, onChange, icon}) => {
       />
       {icon && <FontAwesomeIcon className='icon' icon={icon} />}
     </div>
-  );
-};
+  )
+}
 
-export default TextInputIcon;
+TextInputIcon.propTypes = {
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  icon: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+    PropTypes.string
+  ]).isRequired
+}
+
+export default TextInputIcon

@@ -1,12 +1,11 @@
-// src/Topbar.js
-import React from 'react';
+import './TopBar.css'
 
-function Topbar() {
-    return (
-        <div className="topbar">
-            <h1>¡Hola! Este es mi topbar</h1>
-        </div>
-    );
+function Topbar () {
+  return (
+    <div className="topbar">
+      <h1>¡Hola! Este es mi topbar</h1>
+    </div>
+  )
 }
 
-export default Topbar;
+export default Topbar
