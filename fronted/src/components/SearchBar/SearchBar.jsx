@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import './SearchBar.css'; 
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import './SearchBar.css'
 import '../ButtonIcon/ButtonIcon'
+import PropTypes from 'prop-types'
 
 const SearchBar = ({ onChange }) => {
   return (
@@ -14,6 +15,10 @@ const SearchBar = ({ onChange }) => {
       <FontAwesomeIcon className='icon' icon={faSearch} />
     </div>
   )
+}
+
+SearchBar.propTypes = {
+  onChange: PropTypes.func.isRequired
 }
 
 export default SearchBar
