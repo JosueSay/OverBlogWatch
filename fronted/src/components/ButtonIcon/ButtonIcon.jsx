@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const ButtonIcon = ({ onClick, icon }) => {
   return (
-  <button className='button_icon' onClick={onClick}>
+  <button onClick={onClick}>
       <FontAwesomeIcon className= 'icon' icon={icon} />
     </button>
   )

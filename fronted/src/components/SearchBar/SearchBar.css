@@ -1,0 +1,54 @@
+@import "../../styles/colors.css";
+@import "../../styles/fonts.css";
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--c_black);
+  border: 1px solid var(--c_orange);
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 2px 4px var(--c_orange);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: 'Quicksand Regular', sans-serif;
+  font-weight: bold;
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta el texto que desborda */
+  text-overflow: ellipsis; /* Añade puntos suspensivos para indicar texto truncado */
+}
+
+.search-bar input:focus {
+  outline: none !important;
+}
+
+.search-button {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.search-bar input::placeholder {
+  color: var(--c_placeholder);
+}
+
+.search-button:hover {
+  color: var(--c_dark_grey);
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 10px var(--c_orange);
+}
+
+/* Media query para ajustar el tamaño en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .search-bar input {
+    width: calc(100% - 65px);
+  }
+}
