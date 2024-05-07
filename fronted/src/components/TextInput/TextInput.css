@@ -1,0 +1,55 @@
+.textinput {
+  position: relative;
+  display: inline-block; /* Asegura que el contenedor ocupe solo el ancho del contenido */
+}
+
+.input,
+.input-icon {
+  /* Establecer un mínimo y máximo de altura y anchura */
+  min-width: 200px;
+  max-width: 400px;
+  min-height: 30px;
+  max-height: 50px;
+
+  /* Establecer el color del texto y del borde */
+  color: var(--c_black);
+  border: 1px solid var(--c_orange);
+
+  /* Agregar sombreado */
+  box-shadow: 0 2px 4px var(--c_orange);
+
+  /* Establecer la fuente */
+  font-family: 'Quicksand Regular', sans-serif;
+  font-weight: bold;
+
+  /* Hacer los bordes redondeados */
+  border-radius: 5px;
+}
+
+.input,
+.input-icon::placeholder{
+  color: var(--c_placeholder);
+}
+
+/* Cambiar el color del borde al enfocar */
+.input,
+.input-icon:focus {
+  outline: none !important;
+  border: 1px solid var(--c_orange);
+  box-shadow: 0 0 10px var(--c_orange);
+}
+
+.input-icon {
+  padding: 5px 45px 5px 5px;
+}
+
+.input {
+  padding: 5px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}

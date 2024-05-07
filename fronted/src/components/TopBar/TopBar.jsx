@@ -1,17 +1,12 @@
+// src/Topbar.js
 import React from 'react';
-import './TopBar.css'; // Archivo CSS para estilos específicos de la barra superior
 
-function TopBar() {
-  return (
-    <div className="topbar">
-      <div className="logo">Logo</div>
-      <div className="menu">
-        <a href="/">Inicio</a>
-        <a href="/about">Acerca de</a>
-        <a href="/contact">Contacto</a>
-      </div>
-    </div>
-  );
+function Topbar() {
+    return (
+        <div className="topbar">
+            <h1>¡Hola! Este es mi topbar</h1>
+        </div>
+    );
 }
 
-export default TopBar;
+export default Topbar;

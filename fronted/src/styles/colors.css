@@ -1,27 +1,11 @@
-.c_orange {
-    color: #f99e1a;
+:root {
+   --c_orange: #f99e1a;
+   --c_dark_grey: #43484c;
+   --c_blue: #405275;
+   --c_light_blue: #218ffe;
+   --c_red: #ff4444;
+   --c_black: #000000;
+   --c_white: #ffffff;
+   --c_transparent: #ffffff00;
+   --c_placeholder: #979797;
  }
-  
-.c_dark_grey {
-    color: #43484c;
- }
-
-.c_blue {
-    color: #405275;
- }
-
- .c_light_blue {
-    color: #218ffe;
- }
-  
-.c_red {
-    color: #ff4444;
- }
-
-.c_black {
-    color: #000000;
- }
-
-.c_white {
-   color: #ffffff;
-}

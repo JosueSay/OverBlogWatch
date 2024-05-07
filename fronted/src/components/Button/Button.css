@@ -1,0 +1,26 @@
+@import "../../styles/colors.css";
+@import "../../styles/fonts.css";
+
+.button {
+    border-radius: 5px;
+    border: 2px solid var(--c_orange);
+    background-color: var(--c_transparent);
+    color: var(--c_black);
+    cursor: pointer;
+    min-width: 100px;
+    min-height: 40px;
+    max-width: 200px;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Quicksand Bold', sans-serif;
+}
+
+.button:hover {
+    background-color: var(--c_orange);
+    color: var(--c_white);
+}
+
