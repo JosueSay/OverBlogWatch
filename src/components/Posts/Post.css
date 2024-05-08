@@ -1,0 +1,79 @@
+/* Post.css */
+
+@import "../../styles/colors.css";
+@import "../../styles/fonts.css";
+
+.post-container {
+  border-radius: 8px; /* Cambia el radio del borde */
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.post-title {
+  font-family: 'Quicksand Bold', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.post-info {
+  font-family: 'Quicksand Light Italic', sans-serif;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  font-family: 'Quicksand Regular', sans-serif;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.comment p {
+  margin-bottom: 5px;
+}
+
+.comment p:first-child {
+  font-family: 'Quicksand Regular', sans-serif;
+  font-weight: bold;
+}
+
+.comment p:nth-child(2) {
+  font-family: 'Quicksand Regular', sans-serif;
+  
+}
+
+.comment p:nth-child(3) {
+  font-family: 'Quicksand Light', sans-serif;
+}
+
+.comentador:hover, .username:hover, .post-title:hover {
+  cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el título */
+  text-decoration: underline; /* Subraya el texto del título cuando el mouse está sobre él */
+}
+
+.comment-error {
+  color: red;
+  font-style: italic;
+}
+
+.comment-details {
+  font-family: 'Quicksand Regular', sans-serif;
+}
+
+
+
+
