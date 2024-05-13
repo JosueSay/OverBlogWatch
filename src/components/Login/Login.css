@@ -13,13 +13,14 @@
   
   .login-container {
     background-color: var(--c_transparent);
-    padding: 2rem;
-    width: 50rem;
-    height: 25rem;
-    border-radius: 1rem;
-    border: 1px solid black;
-    box-shadow: 2rem 2rem 3rem  rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0.1rem);
+    padding: 4%;
+    width: 80%;
+    max-width: 50rem;
+    height: auto;
+    border-radius: 2rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0.003);
+    box-shadow: 2rem 2rem 3rem  rgba(0, 0, 0, 0.157);
+    backdrop-filter: blur(0.2rem);
   }
 
   .login-title {
@@ -28,3 +29,41 @@
     padding-bottom: 2rem;
   }
 
+  .password-container, .username-container {
+    padding-bottom: 2rem;
+    user-select: none;
+  }
+
+  .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    user-select: none;
+  }
+
+  .error-message {
+    color: var(--c_red);
+    font-family: 'Quicksand Bold', sans-serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    background-color: var(--c_error);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+
+  /* Media queries para tamaños de pantalla específicos */
+@media screen and (max-width: 768px) {
+    .login-container {
+        width: 90%; /* Ajusta el ancho para pantallas más pequeñas */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .login-container {
+        padding: 3%; /* Ajusta el padding para pantallas más pequeñas */
+    }
+}

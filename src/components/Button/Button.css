@@ -2,16 +2,16 @@
 @import "../../styles/fonts.css";
 
 .button {
-    border-radius: 5px;
-    border: 2px solid var(--c_orange);
+    border-radius: 1rem;
+    border: 0.1rem solid var(--c_orange);
     background-color: var(--c_transparent);
     color: var(--c_white);
     cursor: pointer;
     width: 100%;
     height: auto;
-    max-width: 200px;
-    font-size: 1em;
-    padding: 0.5em 1em; 
+    max-width: 10em;
+    font-size: 2em;
+    padding: 0.5rem 1rem; 
     transition: background-color 0.3s, color 0.3s;
     white-space: nowrap;
     overflow: hidden;

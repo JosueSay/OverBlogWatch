@@ -34,6 +34,7 @@ const Login = () => {
         <div className='login-center-container'>
             <div className='login-container'>
                 <div className='login-title'>Iniciar Sesión</div>
+                <div className='username-container'>
                 <TextInput 
                     type='text'
                     name='username'
@@ -42,26 +43,32 @@ const Login = () => {
                     onChange={handleChange}
                 />
                 {errorMessages.username && <div className="error-message">{errorMessages.username}</div>}
-
-                <TextInputIcon
-                    type='password'
-                    name='password'
-                    placeholder='Ingrese su contraseña' 
-                    value={formData.password}
-                    onChange={handleChange}
-                    icon={showPassword ? faEyeSlash : faEye}
-                    onIconClick={handlePasswordVisibility}
-                />
-                {errorMessages.password && <div className="error-message">{errorMessages.password}</div>}
-
-                <Button
-                    title='Iniciar Sesión'
-                    onClick={clickButtonLogin}
-                />
-                <Button
-                    title='Registrarme'
-                    onClick={clickButtonRegister}
-                />
+                </div>
+                
+                <div className='password-container'>
+                    <TextInputIcon
+                        type='password'
+                        name='password'
+                        placeholder='Ingrese su contraseña' 
+                        value={formData.password}
+                        onChange={handleChange}
+                        icon={showPassword ? faEyeSlash : faEye}
+                        onIconClick={handlePasswordVisibility}
+                    />
+                    {errorMessages.password && <div className="error-message">{errorMessages.password}</div>}
+                </div>
+                
+                <div className='buttons-container'>
+                    <Button
+                        title='Iniciar Sesión'
+                        onClick={clickButtonLogin}
+                    />
+                    <Button
+                        title='Registrarme'
+                        onClick={clickButtonRegister}
+                    />
+                </div>
+                
             </div>
         </div>
     );
