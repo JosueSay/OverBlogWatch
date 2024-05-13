@@ -8,17 +8,18 @@
   width: 100%;
   color: var(--c_black);
   border: 1px solid var(--c_orange);
-  border-radius: 5px;
+  border-radius: 0.3rem;
   background-color: white;
-  box-shadow: 0 2px 4px var(--c_orange);
+  box-shadow: 0 0.1rem 0.7rem var(--c_orange);
 }
 
 .input-icon input {
   flex: 1;
   border: none;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
   font-family: 'Quicksand Regular', sans-serif;
+  font-size: 2rem;
   font-weight: bold;
   white-space: nowrap; /* Evita el salto de línea */
   overflow: hidden; /* Oculta el texto que desborda */
@@ -34,12 +35,13 @@
 }
 
 .input-icon:focus-within {
-  box-shadow: 0 0 10px var(--c_orange);
+  box-shadow: 0 0 1rem var(--c_orange);
 }
 
 .icon {
   cursor: pointer;
-  padding: 5px;
+  padding: 1rem;
+  font-size: 2rem;
 }
 
 .icon:hover {

@@ -27,16 +27,23 @@ const Posts = () => {
   };
 
   useEffect(() => {
-    const fetchAllComments = async () => {
-      const postsWithComments = await Promise.all(
-        posts.map(async (post) => {
-          const comment = await fetchComments(post.Id_post);
-          return { ...post, comment };
-        })
-      );
-      setPosts(postsWithComments);
+    const fetchCommentsForPost = async (postId) => {
+      const comment = await fetchComments(postId);
+      setPosts(prevPosts => {
+        return prevPosts.map(post => {
+          if (post.Id_post === postId) {
+            return { ...post, comment };
+          }
+          return post;
+        });
+      });
     };
-    fetchAllComments();
+
+    posts.forEach(post => {
+      if (post.Cantidad_comentarios > 0 && !post.comment) {
+        fetchCommentsForPost(post.Id_post);
+      }
+    });
   }, [posts]);
 
   const formatDate = (dateString) => {
@@ -53,15 +60,18 @@ const Posts = () => {
         <div key={post.Id_post} className="post-container">
           <h2 className="post-title">{post.Titulo}</h2>
           <p className="post-info">
-          Creado por <span className="username">{post.NombreUsuario}</span> el {formatDate(post.Fecha)}
-        </p>
-
+            Creado por <span className="username">{post.NombreUsuario}</span> el {formatDate(post.Fecha)}
+          </p>
           <p className="post-content">{post.Contenido}</p>
           {post.Imagen.startsWith('data:image/png;base64') ? (
             <img src={post.Imagen} alt="Imagen adjunta" className="post-image" />
           ) : (
             <img src={`data:image/png;base64,${post.Imagen}`} alt="Imagen adjunta" className="post-image" />
           )}
+          <div className="stats">
+            <p className="likes-stats"><FontAwesomeIcon icon={faHeart} /> {post.Cantidad_likes}</p>
+            <p className="comment-stats"><FontAwesomeIcon icon={faComment} /> {post.Cantidad_comentarios}</p>
+          </div>
           {post.comment && !post.comment.errorMessage && (
             <div className="comment">
               <p><FontAwesomeIcon icon={faComment} /> Comentarios</p>

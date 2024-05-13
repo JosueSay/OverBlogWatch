@@ -1,11 +1,12 @@
 import './TextInput.css'
 import PropTypes from 'prop-types'
 
-const TextInput = ({ type, placeholder, value, onChange }) => {
+const TextInput = ({ type, name, placeholder, value, onChange }) => {
   return (
     <div className='textinput'>
       <input
         type={type}
+        name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
@@ -17,6 +18,7 @@ const TextInput = ({ type, placeholder, value, onChange }) => {
 
 TextInput.propTypes = {
   type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired

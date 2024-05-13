@@ -10,7 +10,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.comment {
+.stats, .comment {
   border: 1px solid #ccc;
   padding: 10px;
   margin-top: 10px;
@@ -74,6 +74,16 @@
   font-family: 'Quicksand Regular', sans-serif;
 }
 
+.stats {
+  display: flex;
+  align-items: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-family: 'Quicksand Regular', sans-serif;
+}
 
+.stats p {
+  margin-right: 25%;
+}
 
 

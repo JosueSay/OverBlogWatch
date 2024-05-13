@@ -1,0 +1,30 @@
+@import "../../styles/colors.css";
+@import "../../styles/fonts.css";
+
+.login-center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://wallpapers.com/images/featured/overwatch-dpacmg5qk3abi7qn.jpg'); /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta de tu imagen */
+    background-size: cover; /* Ajustamos la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centramos la imagen en el contenedor */
+  }
+  
+  .login-container {
+    background-color: var(--c_transparent);
+    padding: 2rem;
+    width: 50rem;
+    height: 25rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    box-shadow: 2rem 2rem 3rem  rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.1rem);
+  }
+
+  .login-title {
+    font-family: 'Quicksand Bold', sans-serif;
+    font-size: 4rem;
+    padding-bottom: 2rem;
+  }
+

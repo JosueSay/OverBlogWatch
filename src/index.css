@@ -1,4 +1,4 @@
 body {
-    background-color: var(--c_body); /* Cambia el color de fondo del cuerpo */
-  }
-  
+  margin: 0; /* Eliminamos cualquier margen predeterminado */
+   /*background-color: var(--c_body); /* Cambia el color de fondo del cuerpo */
+}
