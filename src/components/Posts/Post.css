@@ -1,84 +1,83 @@
-/* Post.css */
-
 @import "../../styles/colors.css";
 @import "../../styles/fonts.css";
 
 .post-container {
-  border-radius: 8px; /* Cambia el radio del borde */
-  margin-bottom: 20px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
 }
 
 .stats, .comment {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 0.01rem solid #ccc;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
 }
 .post-title {
   font-family: 'Quicksand Bold', sans-serif;
   font-size: 2rem;
-  margin-bottom: 10px;
 }
 
 .post-info {
   font-family: 'Quicksand Light Italic', sans-serif;
   font-size: 0.9rem;
   color: #888;
-  margin-bottom: 10px;
 }
 
 .post-content {
   font-family: 'Quicksand Regular', sans-serif;
-  margin-bottom: 10px;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .post-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.comment p {
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 55rem;
+  max-height: 50rem;
+  overflow: hidden;
 }
 
 .comment p:first-child {
   font-family: 'Quicksand Regular', sans-serif;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .comment p:nth-child(2) {
   font-family: 'Quicksand Regular', sans-serif;
-  
+  font-size: 1.2rem;
 }
 
 .comment p:nth-child(3) {
   font-family: 'Quicksand Light', sans-serif;
+  font-size: 1.1rem;
 }
 
 .comentador:hover, .username:hover, .post-title:hover {
-  cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el título */
-  text-decoration: underline; /* Subraya el texto del título cuando el mouse está sobre él */
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .comment-error {
+  font-size: 1rem;
   color: red;
-  font-style: italic;
+  font-family: 'Quicksand Regular', sans-serif;
 }
 
 .comment-details {
   font-family: 'Quicksand Regular', sans-serif;
+  font-size: 1.2rem;
 }
 
 .stats {
   display: flex;
   align-items: center;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
   font-family: 'Quicksand Regular', sans-serif;
 }
 
@@ -86,4 +85,29 @@
   margin-right: 25%;
 }
 
+/* Media Query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .post-title {
+    font-size: 1.5rem;
+  }
 
+  .post-info {
+    font-size: 0.8rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+
+  .comment p:first-child {
+    font-size: 1.2rem;
+  }
+
+  .comment p:nth-child(2) {
+    font-size: 1rem;
+  }
+
+  .comment p:nth-child(3) {
+    font-size: 0.9rem;
+  }
+}

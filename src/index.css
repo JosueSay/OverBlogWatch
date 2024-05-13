@@ -1,4 +1,5 @@
 body {
   margin: 0; /* Eliminamos cualquier margen predeterminado */
    /*background-color: var(--c_body); /* Cambia el color de fondo del cuerpo */
+   background-color: var(--c_body);
 }

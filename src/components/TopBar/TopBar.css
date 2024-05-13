@@ -26,12 +26,20 @@
 }
 
 .topbar img {
-    max-width: 50%;
+    width: 100%;
+    min-width: 15rem;
+    max-width: 15rem;
     cursor: pointer;
+    padding-left: 1rem;
+}
+.topbar .c1 {
+    display: flex;
+    justify-content: center;
 }
 
 .topbar .c3 {
     display: flex;
+    justify-content: center;
 }
 
 .menu-icon {
@@ -56,7 +64,7 @@
         padding: 0px 10px 0px 0px;
         cursor: pointer;
         color: var(--c_white);
-    }
+        font-size: 2rem;    }
 }
 
 .dropdown-menu {
