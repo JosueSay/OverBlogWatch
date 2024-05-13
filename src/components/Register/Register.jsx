@@ -1,6 +1,7 @@
 import './Register.css'
 import { useState } from 'react'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 import TextInput from '../TextInput/TextInput'
 import TextInputIcon from '../TextInput/TextInputIcon'
 import Button from '../Button/Button'
@@ -14,6 +15,7 @@ const Register = () => {
   const [errorMessages, setErrorMessages] = useState({})
   const { formData, handleChange } = useForm({ username: '', email: '', password: '', confirmPassword: '' })
   const { fetchData, loading, error, data } = useAPI() // Obtén fetchData del hook useAPI
+  const navigate = useNavigate()
 
   const handlePasswordVisibility = () => {
     setShowPassword(!showPassword)
@@ -57,6 +59,10 @@ const Register = () => {
         password: encryptedPassword
       }
       fetchData(url, method, body)
+      // Esperar 5 segundos antes de navegar
+      setTimeout(() => {
+        navigate('/login')
+      }, 1000)
     }
   }
 

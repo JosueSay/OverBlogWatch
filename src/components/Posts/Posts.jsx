@@ -54,21 +54,33 @@ const Posts = () => {
     return `${day}/${month}/${year}`
   }
 
+  const handlePostTitleClick = (postId) => {
+    console.log('ID del post:', postId)
+  }
+
+  const handleUserNameClick = (userId) => {
+    console.log('ID del usuario:', userId)
+  }
+
+  const handleUserCommentClick = (commentUserId) => {
+    console.log ('ID del comentador:', commentUserId)
+  }
+
   return (
     <div>
       {posts.map(post => (
         <div key={post.Id_post} className="post-container">
-          <h2 className="post-title">{post.Titulo}</h2>
+          <h2 className="post-title" onClick={() => handlePostTitleClick(post.Id_post)}>{post.Titulo}</h2>
           <p className="post-info">
-            Creado por <span className="username">{post.NombreUsuario}</span> el {formatDate(post.Fecha)}
+            Creado por <span className="username" onClick={() => handleUserNameClick(post.Id_usuario)}>{post.NombreUsuario}</span> el {formatDate(post.Fecha)}
           </p>
           <p className="post-content">{post.Contenido}</p>
           {post.Imagen.startsWith('data:image/png;base64')
             ? (
-            <img src={post.Imagen} alt="Imagen adjunta" className="post-image" />
+              <img src={post.Imagen} alt="Imagen adjunta" className="post-image" />
               )
             : (
-            <img src={`data:image/png;base64,${post.Imagen}`} alt="Imagen adjunta" className="post-image" />
+              <img src={`data:image/png;base64,${post.Imagen}`} alt="Imagen adjunta" className="post-image" />
               )}
           <div className="stats">
             <p className="likes-stats"><FontAwesomeIcon icon={faHeart} /> {post.Cantidad_likes}</p>
@@ -77,7 +89,7 @@ const Posts = () => {
           {post.comment && !post.comment.errorMessage && (
             <div className="comment">
               <p><FontAwesomeIcon icon={faComment} /> Comentarios</p>
-              <p><span className="comentador">{post.comment.Usuario}</span></p>
+              <p><span className="comentador" onClick={() => handleUserCommentClick(post.comment.Comennted_Id)}>{post.comment.Usuario}</span></p>
               <p>{post.comment.Comentario}</p>
               <p className="comment-details"><FontAwesomeIcon icon={faHeart} /> {post.comment.Likes_Comentario} Likes {formatDate(post.comment.Fecha_Comentario)}</p>
             </div>

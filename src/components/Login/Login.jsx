@@ -1,18 +1,21 @@
 import './Login.css'
 import { useState, useEffect } from 'react'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
+import md5 from 'md5'
 import TextInput from '../TextInput/TextInput'
 import TextInputIcon from '../TextInput/TextInputIcon'
 import Button from '../Button/Button'
 import useForm from '../../hooks/useForm'
 import useAPI from '../../hooks/useApiLogin'
-import md5 from 'md5'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [errorMessages, setErrorMessages] = useState({})
   const { formData, handleChange } = useForm({ username: '', password: '' })
   const { data, loading, error, fetchData } = useAPI()
+  const navigate = useNavigate()
+
   const handlePasswordVisibility = () => {
     setShowPassword(!showPassword)
   }
@@ -38,6 +41,7 @@ const Login = () => {
   }
 
   const clickButtonRegister = () => {
+    navigate('/register')
     console.log('Click on Button for Register')
   }
 

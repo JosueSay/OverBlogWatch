@@ -3,23 +3,27 @@ import logo from '../../assets/icon_name_ow2.png'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import Button from '../Button/Button'
 import Image from '../Image/Image'
 
 const Topbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-
+  const navigate = useNavigate()
+  
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen)
   }
 
   const handleButtonClick = () => {
     console.log('Click botón')
+    navigate('/login')
   }
 
   const handleImageClick = () => {
     console.log('Click Logo')
+    navigate('/')
   }
 
   const handleMenuOptionClick = (option) => {
