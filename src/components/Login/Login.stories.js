@@ -5,5 +5,5 @@ export default {
 }
 
 export const LoginDefault = {
-  
+
 }

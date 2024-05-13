@@ -1,58 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import './Post.css'; // Importa el archivo CSS
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faComment } from '@fortawesome/free-solid-svg-icons';
+import './Post.css'
+import { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart, faComment } from '@fortawesome/free-solid-svg-icons'
 
 const Posts = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
     fetch('http://127.0.0.1:3000/posts')
       .then(response => response.json())
       .then(data => setPosts(data))
-      .catch(error => console.error('Error fetching posts:', error));
-  }, []);
+      .catch(error => console.error('Error fetching posts:', error))
+  }, [])
 
   const fetchComments = async (postId) => {
     try {
-      const response = await fetch(`http://127.0.0.1:3000/posts/${postId}/most-popular-comment`);
+      const response = await fetch(`http://127.0.0.1:3000/posts/${postId}/most-popular-comment`)
       if (response.status === 404) {
-        return { errorMessage: "Sin comentarios aún" };
+        return { errorMessage: 'Sin comentarios aún' }
       }
-      const data = await response.json();
-      return data;
+      const data = await response.json()
+      return data
     } catch (error) {
-      console.error('Error fetching comments:', error);
+      console.error('Error fetching comments:', error)
     }
-  };
+  }
 
   useEffect(() => {
     const fetchCommentsForPost = async (postId) => {
-      const comment = await fetchComments(postId);
+      const comment = await fetchComments(postId)
       setPosts(prevPosts => {
         return prevPosts.map(post => {
           if (post.Id_post === postId) {
-            return { ...post, comment };
+            return { ...post, comment }
           }
-          return post;
-        });
-      });
-    };
+          return post
+        })
+      })
+    }
 
     posts.forEach(post => {
       if (post.Cantidad_comentarios > 0 && !post.comment) {
-        fetchCommentsForPost(post.Id_post);
+        fetchCommentsForPost(post.Id_post)
       }
-    });
-  }, [posts]);
+    })
+  }, [posts])
 
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  };
+    const date = new Date(dateString)
+    const day = date.getDate()
+    const month = date.getMonth() + 1
+    const year = date.getFullYear()
+    return `${day}/${month}/${year}`
+  }
 
   return (
     <div>
@@ -63,11 +63,13 @@ const Posts = () => {
             Creado por <span className="username">{post.NombreUsuario}</span> el {formatDate(post.Fecha)}
           </p>
           <p className="post-content">{post.Contenido}</p>
-          {post.Imagen.startsWith('data:image/png;base64') ? (
+          {post.Imagen.startsWith('data:image/png;base64')
+            ? (
             <img src={post.Imagen} alt="Imagen adjunta" className="post-image" />
-          ) : (
+              )
+            : (
             <img src={`data:image/png;base64,${post.Imagen}`} alt="Imagen adjunta" className="post-image" />
-          )}
+              )}
           <div className="stats">
             <p className="likes-stats"><FontAwesomeIcon icon={faHeart} /> {post.Cantidad_likes}</p>
             <p className="comment-stats"><FontAwesomeIcon icon={faComment} /> {post.Cantidad_comentarios}</p>
@@ -82,13 +84,13 @@ const Posts = () => {
           )}
           {(!post.comment || post.comment.errorMessage) && (
             <div className="comment">
-              <p className="comment-error">{post.comment ? post.comment.errorMessage : "Sin comentarios aún"}</p>
+              <p className="comment-error">{post.comment ? post.comment.errorMessage : 'Sin comentarios aún'}</p>
             </div>
           )}
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Posts;
+export default Posts

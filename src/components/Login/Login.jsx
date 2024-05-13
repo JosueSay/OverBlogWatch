@@ -1,55 +1,70 @@
 import './Login.css'
-import { useState } from 'react';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useState, useEffect } from 'react'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import TextInput from '../TextInput/TextInput'
 import TextInputIcon from '../TextInput/TextInputIcon'
-import useForm from '../../hooks/useForm'
 import Button from '../Button/Button'
+import useForm from '../../hooks/useForm'
+import useAPI from '../../hooks/useApi'
 
 const Login = () => {
-    const [showPassword, setShowPassword] = useState(false);
-    const [errorMessages, setErrorMessages] = useState({});
-    const { formData, handleChange } = useForm({ username: '', password: '' });
+  const [showPassword, setShowPassword] = useState(false)
+  const [errorMessages, setErrorMessages] = useState({})
+  const { formData, handleChange } = useForm({ username: '', password: '' })
+  const { data, error, fetchData } = useAPI()
+  const handlePasswordVisibility = () => {
+    setShowPassword(!showPassword)
+  }
 
-    const handlePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    };
+  const clickButtonLogin = async () => {
+    // Limpiar mensajes de error
+    setErrorMessages({})
 
-    const clickButtonLogin = () => {
-        const errors = {};
-        if (formData.username !== 'usuario_correcto') {
-            errors.username = 'Usuario incorrecto';
-        }
-        if (formData.password !== 'contrasena_correcta') {
-            errors.password = 'Contraseña incorrecta';
-        }
-        setErrorMessages(errors);
-    };
+    // Verificar si los campos están vacíos
+    if (!formData.username.trim() || !formData.password.trim()) {
+      setErrorMessages({ username: 'Completa ambos campos.' })
+      return
+    }
 
-    const clickButtonRegister = () =>{
-        console.log('Click on Button for Register')
-    };
-        
-    return (
+    const url = 'http://127.0.0.1:3000/login'
+    const method = 'POST'
+    const body = {
+      username: formData.username,
+      password: formData.password
+    }
+    fetchData(url, method, body)
+  }
+
+  const clickButtonRegister = () => {
+    console.log('Click on Button for Register')
+  }
+
+  // Efecto secundario para limpiar los mensajes de error cuando se inicia sesión correctamente
+  useEffect(() => {
+    if (data) {
+      setErrorMessages({})
+    }
+  }, [data])
+  return (
         <div className='login-center-container'>
             <div className='login-container'>
                 <div className='login-title'>Iniciar Sesión</div>
                 <div className='username-container'>
-                <TextInput 
-                    type='text'
-                    name='username'
-                    placeholder='Ingrese su username' 
-                    value={formData.username}
-                    onChange={handleChange}
-                />
-                {errorMessages.username && <div className="error-message">{errorMessages.username}</div>}
+                    <TextInput
+                        type='text'
+                        name='username'
+                        placeholder='Ingrese su username'
+                        value={formData.username}
+                        onChange={handleChange}
+                    />
+                    {errorMessages.username && <div className="error-message">{errorMessages.username}</div>}
                 </div>
-                
+
                 <div className='password-container'>
                     <TextInputIcon
                         type='password'
                         name='password'
-                        placeholder='Ingrese su contraseña' 
+                        placeholder='Ingrese su contraseña'
                         value={formData.password}
                         onChange={handleChange}
                         icon={showPassword ? faEyeSlash : faEye}
@@ -57,7 +72,7 @@ const Login = () => {
                     />
                     {errorMessages.password && <div className="error-message">{errorMessages.password}</div>}
                 </div>
-                
+
                 <div className='buttons-container'>
                     <Button
                         title='Iniciar Sesión'
@@ -68,10 +83,11 @@ const Login = () => {
                         onClick={clickButtonRegister}
                     />
                 </div>
-                
+                {/* Mostrar mensaje de error general solo cuando hay un error y el usuario no está logueado */}
+                {error && !data && <div className="error-message">Usuario o contraseña incorrecta</div>}
             </div>
         </div>
-    );
-};
+  )
+}
 
-export default Login;
+export default Login

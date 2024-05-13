@@ -1,19 +1,19 @@
 import '../SearchBar/SearchBar.css'
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
+import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
 
 const TextInputIcon = ({ type, name, placeholder, value, onChange, icon, onIconClick }) => {
-  const [inputType, setInputType] = useState(type); // Nuevo estado para el tipo de input
+  const [inputType, setInputType] = useState(type) // Nuevo estado para el tipo de input
 
   const handleIconClick = () => {
     if (inputType === 'password') {
-      setInputType('text');
+      setInputType('text')
     } else {
-      setInputType('password');
+      setInputType('password')
     }
-    onIconClick && onIconClick();
-  };
+    onIconClick && onIconClick()
+  }
 
   return (
     <div className='input-icon'>
@@ -26,8 +26,8 @@ const TextInputIcon = ({ type, name, placeholder, value, onChange, icon, onIconC
       />
       {icon && <FontAwesomeIcon className='icon' icon={icon} onClick={handleIconClick} />}
     </div>
-  );
-};
+  )
+}
 
 TextInputIcon.propTypes = {
   type: PropTypes.string.isRequired,
@@ -41,6 +41,6 @@ TextInputIcon.propTypes = {
     PropTypes.string
   ]).isRequired,
   onIconClick: PropTypes.func
-};
+}
 
-export default TextInputIcon;
+export default TextInputIcon
