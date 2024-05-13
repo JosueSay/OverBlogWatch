@@ -5,11 +5,12 @@ import TopBar from './components/TopBar/TopBar'
 import Publications from './components/Posts/Posts'
 import Fonts from './components/view_styles/view_fonts'
 import Login from './components/Login/Login'
+import Register from './components/Register/Register'
 
 function App () {
   return (
     <div>
-      <Login />
+      <Register />
     </div>
   )
 }

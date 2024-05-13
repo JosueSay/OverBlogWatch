@@ -5,13 +5,13 @@ import TextInput from '../TextInput/TextInput'
 import TextInputIcon from '../TextInput/TextInputIcon'
 import Button from '../Button/Button'
 import useForm from '../../hooks/useForm'
-import useAPI from '../../hooks/useApi'
+import useAPI from '../../hooks/useApiLogin'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [errorMessages, setErrorMessages] = useState({})
   const { formData, handleChange } = useForm({ username: '', password: '' })
-  const { data, error, fetchData } = useAPI()
+  const { data, loading, error, fetchData } = useAPI()
   const handlePasswordVisibility = () => {
     setShowPassword(!showPassword)
   }
