@@ -6,6 +6,7 @@ import TextInputIcon from '../TextInput/TextInputIcon'
 import Button from '../Button/Button'
 import useForm from '../../hooks/useForm'
 import useAPI from '../../hooks/useApiRegister'
+import md5 from 'md5'
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -49,10 +50,11 @@ const Register = () => {
     if (Object.keys(errors).length === 0) {
       const url = 'http://127.0.0.1:3000/users'
       const method = 'POST'
+      const encryptedPassword = md5(formData.password)
       const body = {
         nombre: formData.username,
         email: formData.email,
-        password: formData.password
+        password: encryptedPassword
       }
       fetchData(url, method, body)
     }

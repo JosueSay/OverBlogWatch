@@ -6,6 +6,7 @@ import TextInputIcon from '../TextInput/TextInputIcon'
 import Button from '../Button/Button'
 import useForm from '../../hooks/useForm'
 import useAPI from '../../hooks/useApiLogin'
+import md5 from 'md5'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -28,9 +29,10 @@ const Login = () => {
 
     const url = 'http://127.0.0.1:3000/login'
     const method = 'POST'
+    const encryptedPassword = md5(formData.password)
     const body = {
       username: formData.username,
-      password: formData.password
+      password: encryptedPassword
     }
     fetchData(url, method, body)
   }
@@ -85,6 +87,10 @@ const Login = () => {
                 </div>
                 {/* Mostrar mensaje de error general solo cuando hay un error y el usuario no está logueado */}
                 {error && !data && <div className="error-message">Usuario o contraseña incorrecta</div>}
+                {/* Mostrar mensaje de éxito o error al registrar */}
+            <div className='msg-container'>
+              {data && <div className="success-message">Usuario logueado exitosamente</div>}
+            </div>
             </div>
         </div>
   )
