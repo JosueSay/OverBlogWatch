@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006 --ci",
     "build-storybook": "storybook build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "start": "server dist -s -n -L $PORT"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
