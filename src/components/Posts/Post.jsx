@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Post.css';
 import { useParams } from 'react-router-dom';
 import TopBar from '../TopBar/TopBar';

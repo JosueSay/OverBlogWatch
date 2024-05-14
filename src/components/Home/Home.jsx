@@ -2,9 +2,8 @@ import './Home.css'
 import TopBar from '../TopBar/TopBar'
 import Posts from '../Posts/Posts'
 
-
 const Home = () => {
-  return(
+  return (
     <div className='home-container'>
       <div className='topbar-container'>
         <TopBar />

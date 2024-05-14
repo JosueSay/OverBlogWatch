@@ -11,7 +11,7 @@ import Image from '../Image/Image'
 const Topbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const navigate = useNavigate()
-  
+
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen)
   }
