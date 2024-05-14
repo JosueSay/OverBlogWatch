@@ -2,7 +2,7 @@ import './App.css'
 import './styles/fonts.css'
 import './styles/colors.css'
 import TopBar from './components/TopBar/TopBar'
-import Posts from './components/Posts/Posts'
+import Post from './components/Posts/Post'
 import Fonts from './components/view_styles/view_fonts'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
@@ -17,6 +17,7 @@ function App () {
         <Route path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/post/:postId' element={<Post/>}/>
         </Routes>
       </Router>
     </div>

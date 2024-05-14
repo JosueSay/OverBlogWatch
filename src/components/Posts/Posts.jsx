@@ -2,9 +2,12 @@ import './Post.css'
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom';
+
 
 const Posts = () => {
   const [posts, setPosts] = useState([])
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://127.0.0.1:3000/posts')
@@ -56,6 +59,7 @@ const Posts = () => {
 
   const handlePostTitleClick = (postId) => {
     console.log('ID del post:', postId)
+    navigate(`/post/${postId}`);
   }
 
   const handleUserNameClick = (userId) => {
