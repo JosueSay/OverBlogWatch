@@ -23,7 +23,7 @@ const Topbar = () => {
 
   const handleImageClick = () => {
     console.log('Click Logo')
-    navigate('/')
+    navigate('/OverBlogWatch')
   }
 
   const handleMenuOptionClick = (option) => {

@@ -12,7 +12,7 @@ function App () {
     <div className=''>
       <Router>
         <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/OverBlogWatch' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/post/:postId' element={<Post/>}/>
