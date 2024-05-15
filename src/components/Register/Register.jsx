@@ -50,7 +50,7 @@ const Register = () => {
 
     // Si no hay errores, proceder con el envío del formulario
     if (Object.keys(errors).length === 0) {
-      const url = 'http://127.0.0.1:3000/users'
+      const url = 'https://overblogwatchapi-production.up.railway.app/users'
       const method = 'POST'
       const encryptedPassword = md5(formData.password)
       const body = {

@@ -9,7 +9,7 @@ const Posts = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch('http://127.0.0.1:3000/posts')
+    fetch('https://overblogwatchapi-production.up.railway.app/posts')
       .then(response => response.json())
       .then(data => setPosts(data))
       .catch(error => console.error('Error fetching posts:', error))
@@ -17,7 +17,7 @@ const Posts = () => {
 
   const fetchComments = async (postId) => {
     try {
-      const response = await fetch(`http://127.0.0.1:3000/posts/${postId}/most-popular-comment`)
+      const response = await fetch(`https://overblogwatchapi-production.up.railway.app/posts/${postId}/most-popular-comment`)
       if (response.status === 404) {
         return { errorMessage: 'Sin comentarios aún' }
       }

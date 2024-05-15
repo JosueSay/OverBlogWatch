@@ -30,7 +30,7 @@ const Login = () => {
       return
     }
 
-    const url = 'http://127.0.0.1:3000/login'
+    const url = 'https://overblogwatchapi-production.up.railway.app/login'
     const method = 'POST'
     const encryptedPassword = md5(formData.password)
     const body = {
